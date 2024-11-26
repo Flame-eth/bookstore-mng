@@ -13,9 +13,9 @@ var db *gorm.DB
 
 func SetupDatabase() {
 
-	err := godotenv.Load()
+	err := godotenv.Load("../../.env")
 	if err != nil {
-		fmt.Println("Error loading .env file")
+		fmt.Printf("Error loading .env file, %v\n", err)
 		return
 	}
 
